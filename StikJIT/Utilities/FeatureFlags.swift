@@ -7,6 +7,4 @@ enum FeatureFlags {
     static let showBetaTabs = true
     /// Forces the Theme Expansion to be unlocked and visible everywhere.
     static let alwaysUnlockThemeExpansion = true
-    /// Controls visibility of the Mini Tools tab and related UI.
-    static let isMiniToolsEnabled = false
 }

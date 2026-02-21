@@ -6,9 +6,6 @@ enum TabConfiguration {
     private static let coreIDs: [String] = ["home", "console", "scripts", "deviceinfo"]
     static var allowedIDs: [String] {
         var ids = coreIDs
-        if FeatureFlags.isMiniToolsEnabled {
-            ids.append("tools")
-        }
         if FeatureFlags.showBetaTabs {
             ids.append("profiles")
             ids.append("processes")
