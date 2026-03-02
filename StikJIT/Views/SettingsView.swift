@@ -8,7 +8,7 @@ import UniformTypeIdentifiers
 import UIKit
 
 struct SettingsView: View {
-    @AppStorage("username") private var username = "User"
+
     @AppStorage("selectedAppIcon") private var selectedAppIcon: String = "AppIcon"
     @AppStorage("enableAdvancedOptions") private var enableAdvancedOptions = false
     @AppStorage("enableAdvancedBetaOptions") private var enableAdvancedBetaOptions = false
@@ -78,14 +78,10 @@ struct SettingsView: View {
                     .padding(.vertical, 8)
                 }
 
-                // 2) Profile
-                Section("Profile") {
-                    HStack {
-                        Text("Username")
-                        Spacer()
-                        TextField("User", text: $username)
-                            .multilineTextAlignment(.trailing)
-                            .foregroundStyle(.secondary)
+                // 2) GitHub
+                Section {
+                    Link(destination: URL(string: "https://github.com/StephenDev0/StikDebug/stargazers")!) {
+                        Label("Star on GitHub", systemImage: "star")
                     }
                 }
 
