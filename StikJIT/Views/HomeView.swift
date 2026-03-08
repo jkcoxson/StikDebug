@@ -230,7 +230,7 @@ struct HomeView: View {
         switch appName {
         case "maciOS":
             return ("maciOS", "maciOS.js")
-        case "Amethyst", "MeloNX", "XeniOS":
+        case "Amethyst", "MeloNX", "XeniOS", "MeloCafe":
             return ("universal", "universal.js")
         case "Geode":
             return ("Geode", "Geode.js")
