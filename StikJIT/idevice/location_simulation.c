@@ -42,7 +42,7 @@ int simulate_location(const char *device_ip,
     }
 
     struct sockaddr_in addr = { .sin_family = AF_INET,
-                                .sin_port   = htons(LOCKDOWN_PORT) };
+                                .sin_port   = htons(49152) };
     if (inet_pton(AF_INET, device_ip, &addr.sin_addr) != 1) {
         return IPA_ERR_INVALID_IP;
     }
