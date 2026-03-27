@@ -87,7 +87,7 @@ static JITEnableContext* sharedJITContext = nil;
 - (RpPairingFileHandle*)getPairingFileWithError:(NSError**)error {
     NSFileManager* fm = [NSFileManager defaultManager];
     NSURL* docPathUrl = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
-    NSURL* pairingFileURL = [docPathUrl URLByAppendingPathComponent:@"pairingFile.plist"];
+    NSURL* pairingFileURL = [docPathUrl URLByAppendingPathComponent:@"rp_pairing_file.plist"];
 
     if (![fm fileExistsAtPath:pairingFileURL.path]) {
         *error = [self errorWithStr:@"Pairing file not found!" code:-17];

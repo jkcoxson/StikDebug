@@ -269,7 +269,7 @@ class MountingProgress: ObservableObject {
 }
 
 func isPairing() -> Bool {
-    let pairingpath = URL.documentsDirectory.appendingPathComponent("pairingFile.plist").path
+    let pairingpath = URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist").path
     var pairingFile: RpPairingFileHandle?
     let err = rp_pairing_file_read(pairingpath, &pairingFile)
     if err != nil { return false }
@@ -279,7 +279,7 @@ func isPairing() -> Bool {
 
 func startTunnelInBackground(showErrorUI: Bool = true) {
     assert(Thread.isMainThread, "startTunnelInBackground must be called on the main thread")
-    let pairingFileURL = URL.documentsDirectory.appendingPathComponent("pairingFile.plist")
+    let pairingFileURL = URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist")
 
     guard FileManager.default.fileExists(atPath: pairingFileURL.path) else {
         tunnelStartPending = false
@@ -321,7 +321,7 @@ func startTunnelInBackground(showErrorUI: Bool = true) {
             DispatchQueue.main.async {
                 if code == -9 {
                     do {
-                        try FileManager.default.removeItem(at: URL.documentsDirectory.appendingPathComponent("pairingFile.plist"))
+                        try FileManager.default.removeItem(at: URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist"))
                         LogManager.shared.addInfoLog("Removed invalid pairing file")
                     } catch {
                         LogManager.shared.addErrorLog("Failed to remove invalid pairing file: \(error.localizedDescription)")

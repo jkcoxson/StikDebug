@@ -140,7 +140,7 @@ struct DeviceInfoView: View {
     @State private var justCopied = false
 
     private let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    private var pairingURL: URL { docs.appendingPathComponent("pairingFile.plist") }
+    private var pairingURL: URL { docs.appendingPathComponent("rp_pairing_file.plist") }
     private var isPaired: Bool { FileManager.default.fileExists(atPath: pairingURL.path) }
 
     @State private var searchText = ""

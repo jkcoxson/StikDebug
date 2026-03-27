@@ -199,11 +199,11 @@ struct SettingsView: View {
 
                 if fileManager.fileExists(atPath: url.path) {
                     do {
-                        if fileManager.fileExists(atPath: URL.documentsDirectory.appendingPathComponent("pairingFile.plist").path) {
-                            try fileManager.removeItem(at: URL.documentsDirectory.appendingPathComponent("pairingFile.plist"))
+                        if fileManager.fileExists(atPath: URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist").path) {
+                            try fileManager.removeItem(at: URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist"))
                         }
 
-                        try fileManager.copyItem(at: url, to: URL.documentsDirectory.appendingPathComponent("pairingFile.plist"))
+                        try fileManager.copyItem(at: url, to: URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist"))
                         DispatchQueue.main.async {
                             isImportingFile = true
                             importProgress = 0.0

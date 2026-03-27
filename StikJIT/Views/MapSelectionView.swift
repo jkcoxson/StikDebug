@@ -81,7 +81,7 @@ struct LocationSimulationView: View {
     @State private var newBookmarkName = ""
 
     private var pairingFilePath: String {
-        URL.documentsDirectory.appendingPathComponent("pairingFile.plist").path()
+        URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist").path()
     }
 
     private var pairingExists: Bool {

@@ -128,7 +128,7 @@ struct HomeView: View {
                 let accessing = url.startAccessingSecurityScopedResource()
                 if fileManager.fileExists(atPath: url.path) {
                     do {
-                        let dest = URL.documentsDirectory.appendingPathComponent("pairingFile.plist")
+                        let dest = URL.documentsDirectory.appendingPathComponent("rp_pairing_file.plist")
                         if fileManager.fileExists(atPath: dest.path) {
                             try fileManager.removeItem(at: dest)
                         }
